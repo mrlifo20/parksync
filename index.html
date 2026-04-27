@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARKSYNC - Smart Urban Parking Made Easy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">PARKSYNC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" data-translate="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.html" data-translate="search">Search Parking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html" data-translate="dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how" data-translate="howItWorks">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" data-translate="contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="lang-toggle">
+                        <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+                        <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">AR</button>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                    <a href="profile.html" class="profile-icon" id="profileIcon" style="display: none;">U</a>
+                    <button class="btn btn-accent" id="loginBtn" data-translate="login">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title" data-translate="heroTitle">Smart Urban Parking Made Easy</h1>
+            <p class="hero-subtitle" data-translate="heroSubtitle">Find, Book, and Manage Parking Effortlessly</p>
+            <form class="hero-search" id="heroSearchForm">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="heroSearchInput" 
+                           placeholder="Enter location or parking name..." 
+                           data-translate-placeholder="searchPlaceholder">
+                    <button class="btn btn-accent" type="submit">
+                        <i class="bi bi-search"></i> Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose PARKSYNC?</h2>
+            <p class="section-subtitle">Experience the future of urban parking with our smart solutions</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-custom feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <h4>Real-Time Availability</h4>
+                        <p class="text-secondary">Find available parking spots instantly with live updates and accurate information.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-custom feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <h4>Easy Booking</h4>
+                        <p class="text-secondary">Reserve your spot in seconds with our intuitive booking system. No more circling around!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-custom feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4>Secure Parking</h4>
+                        <p class="text-secondary">All our partner locations are verified and offer secure parking for your peace of mind.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-custom feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                        <h4>EV Charging</h4>
+                        <p class="text-secondary">Find parking spots with EV charging stations. Go green while you park!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-custom feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-qr-code"></i>
+                        </div>
+                        <h4>QR Check-In</h4>
+                        <p class="text-secondary">Seamless entry and exit with QR code scanning. No tickets, no hassle.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-custom feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="bi bi-wallet2"></i>
+                        </div>
+                        <h4>Fair Pricing</h4>
+                        <p class="text-secondary">Transparent pricing with no hidden fees. Pay only for the time you use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section section-dark" id="how">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Park smarter in just 3 easy steps</p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card card-custom step-card h-100">
+                        <div class="step-number">1</div>
+                        <h4>Search</h4>
+                        <p class="text-secondary">Enter your destination and find available parking spots nearby. Filter by price, type, and amenities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card card-custom step-card h-100">
+                        <div class="step-number">2</div>
+                        <h4>Book</h4>
+                        <p class="text-secondary">Select your preferred spot, choose the duration, and confirm your booking in seconds.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card card-custom step-card h-100">
+                        <div class="step-number">3</div>
+                        <h4>Park</h4>
+                        <p class="text-secondary">Use your QR code to check in, park your vehicle, and enjoy your day worry-free!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <p class="section-subtitle">Join thousands of satisfied parkers</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-custom testimonial-card h-100">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="testimonial-avatar">
+                        <p class="testimonial-text">"PARKSYNC has completely changed how I park in the city. No more stress, no more wasted time!"</p>
+                        <div class="testimonial-stars mb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h6>Michael Chen</h6>
+                        <small class="text-secondary">Daily Commuter</small>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-custom testimonial-card h-100">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="testimonial-avatar">
+                        <p class="testimonial-text">"As a business owner, I love how easy it is to manage my parking spaces. Great dashboard!"</p>
+                        <div class="testimonial-stars mb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <h6>Sarah Williams</h6>
+                        <small class="text-secondary">Parking Space Owner</small>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card card-custom testimonial-card h-100">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="User" class="testimonial-avatar">
+                        <p class="testimonial-text">"The EV charging feature is a game-changer. I can charge my car while I work. Brilliant!"</p>
+                        <div class="testimonial-stars mb-2">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h6>David Park</h6>
+                        <small class="text-secondary">EV Owner</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-dark">
+        <div class="container text-center">
+            <h2 class="mb-3">Ready to Park Smarter?</h2>
+            <p class="text-secondary mb-4">Join thousands of users who have already made the switch to hassle-free parking.</p>
+            <a href="register.html" class="btn btn-accent btn-lg me-2">Get Started Free</a>
+            <a href="search.html" class="btn btn-outline-accent btn-lg">Find Parking</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h3 class="navbar-brand mb-3">PARKSYNC</h3>
+                    <p class="text-secondary">Smart urban parking solutions for the modern city. Find, book, and manage parking effortlessly.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="search.html" class="footer-link">Search Parking</a>
+                    <a href="index.html#how" class="footer-link">How It Works</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-title">Support</h5>
+                    <a href="faq.html" class="footer-link">Help Center</a>
+                    <a href="faq.html" class="footer-link">FAQ</a>
+                    <a href="terms.html" class="footer-link">Terms of Service</a>
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <div class="footer-contact">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>123 Parking Street, City Center</span>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="bi bi-envelope"></i>
+                        <span>support@parksync.com</span>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="bi bi-telephone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ParkSync. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

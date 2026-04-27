@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - PARKSYNC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">PARKSYNC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.html">Search Parking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                    <a href="profile.html" class="profile-icon" id="profileIcon" style="display: none;">U</a>
+                    <button class="btn btn-accent" id="loginBtn">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="section section-dark" style="padding-top: 120px;">
+        <div class="container text-center">
+            <h1 class="section-title">Frequently Asked Questions</h1>
+            <p class="section-subtitle">Find answers to common questions about PARKSYNC</p>
+            
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-custom" 
+                               placeholder="Search for answers...">
+                        <button class="btn btn-accent">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <div class="row">
+            <!-- FAQ Categories -->
+            <div class="col-lg-3 mb-4">
+                <div class="card card-custom sticky-top" style="top: 100px;">
+                    <div class="card-body">
+                        <h6 class="text-accent mb-3">Categories</h6>
+                        <nav class="nav flex-column">
+                            <a class="nav-link text-white" href="#general">
+                                <i class="bi bi-question-circle me-2"></i> General
+                            </a>
+                            <a class="nav-link text-white" href="#booking">
+                                <i class="bi bi-calendar-check me-2"></i> Booking
+                            </a>
+                            <a class="nav-link text-white" href="#payment">
+                                <i class="bi bi-credit-card me-2"></i> Payment
+                            </a>
+                            <a class="nav-link text-white" href="#account">
+                                <i class="bi bi-person me-2"></i> Account
+                            </a>
+                            <a class="nav-link text-white" href="#owners">
+                                <i class="bi bi-building me-2"></i> For Owners
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Content -->
+            <div class="col-lg-9">
+                <!-- General -->
+                <div id="general" class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-question-circle text-accent"></i> General Questions</h4>
+                    <div class="accordion" id="generalAccordion">
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#g1" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    What is PARKSYNC?
+                                </button>
+                            </h2>
+                            <div id="g1" class="accordion-collapse collapse show" data-bs-parent="#generalAccordion">
+                                <div class="accordion-body text-secondary">
+                                    PARKSYNC is a smart urban parking platform that helps you find, book, and manage parking spaces effortlessly. We connect drivers with available parking spots in real-time, making city parking stress-free.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#g2" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    How does PARKSYNC work?
+                                </button>
+                            </h2>
+                            <div id="g2" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
+                                <div class="accordion-body text-secondary">
+                                    Simply search for parking near your destination, compare prices and amenities, book your spot, and use the QR code for seamless check-in. It's that easy!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#g3" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    Is PARKSYNC available in my city?
+                                </button>
+                            </h2>
+                            <div id="g3" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
+                                <div class="accordion-body text-secondary">
+                                    We're expanding rapidly! PARKSYNC is currently available in major metropolitan areas across the US, Canada, and Europe. Check our search page to see available parking near you.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking -->
+                <div id="booking" class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-calendar-check text-accent"></i> Booking Questions</h4>
+                    <div class="accordion" id="bookingAccordion">
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#b1" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    How do I book a parking spot?
+                                </button>
+                            </h2>
+                            <div id="b1" class="accordion-collapse collapse" data-bs-parent="#bookingAccordion">
+                                <div class="accordion-body text-secondary">
+                                    Search for parking, select your preferred spot, choose your duration, enter your vehicle details, and confirm your booking. You'll receive a QR code for check-in.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#b2" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    Can I extend my booking?
+                                </button>
+                            </h2>
+                            <div id="b2" class="accordion-collapse collapse" data-bs-parent="#bookingAccordion">
+                                <div class="accordion-body text-secondary">
+                                    Yes! You can extend your booking directly from your reservations page, subject to availability. We'll send you a reminder before your booking expires.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#b3" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    What is the cancellation policy?
+                                </button>
+                            </h2>
+                            <div id="b3" class="accordion-collapse collapse" data-bs-parent="#bookingAccordion">
+                                <div class="accordion-body text-secondary">
+                                    You can cancel your booking up to 1 hour before the scheduled start time for a full refund. Cancellations within 1 hour may be subject to a 50% fee.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment -->
+                <div id="payment" class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-credit-card text-accent"></i> Payment Questions</h4>
+                    <div class="accordion" id="paymentAccordion">
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#p1" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    What payment methods are accepted?
+                                </button>
+                            </h2>
+                            <div id="p1" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                <div class="accordion-body text-secondary">
+                                    We accept all major credit/debit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, and Google Pay.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#p2" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    Is my payment information secure?
+                                </button>
+                            </h2>
+                            <div id="p2" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                <div class="accordion-body text-secondary">
+                                    Yes, absolutely! We use industry-standard SSL encryption and partner with Stripe for secure payment processing. We never store your complete card details.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account -->
+                <div id="account" class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-person text-accent"></i> Account Questions</h4>
+                    <div class="accordion" id="accountAccordion">
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#a1" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    How do I create an account?
+                                </button>
+                            </h2>
+                            <div id="a1" class="accordion-collapse collapse" data-bs-parent="#accountAccordion">
+                                <div class="accordion-body text-secondary">
+                                    Click the "Sign Up" button, fill in your details, and verify your email. You can also sign up using Google or Facebook for quicker registration.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#a2" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    How do I reset my password?
+                                </button>
+                            </h2>
+                            <div id="a2" class="accordion-collapse collapse" data-bs-parent="#accountAccordion">
+                                <div class="accordion-body text-secondary">
+                                    Click "Forgot Password" on the login page, enter your email, and we'll send you a reset link. The link expires in 24 hours.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- For Owners -->
+                <div id="owners" class="mb-5">
+                    <h4 class="mb-4"><i class="bi bi-building text-accent"></i> For Parking Space Owners</h4>
+                    <div class="accordion" id="ownersAccordion">
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#o1" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    How can I list my parking space?
+                                </button>
+                            </h2>
+                            <div id="o1" class="accordion-collapse collapse" data-bs-parent="#ownersAccordion">
+                                <div class="accordion-body text-secondary">
+                                    Register as a parking space owner, fill in your space details, upload photos, set your pricing, and submit for verification. Once approved, your space will be live!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" style="background: var(--bg-secondary); border-color: rgba(255,255,255,0.1);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#o2" style="background: var(--bg-secondary); color: var(--text-primary);">
+                                    What are the fees for listing?
+                                </button>
+                            </h2>
+                            <div id="o2" class="accordion-collapse collapse" data-bs-parent="#ownersAccordion">
+                                <div class="accordion-body text-secondary">
+                                    PARKSYNC charges a small commission on successful bookings. There are no upfront listing fees. Contact us for detailed pricing information.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Still Have Questions -->
+                <div class="card card-custom text-center">
+                    <div class="card-body p-5">
+                        <i class="bi bi-chat-dots display-4 text-accent"></i>
+                        <h4 class="mt-3">Still Have Questions?</h4>
+                        <p class="text-secondary mb-4">Our support team is ready to help you.</p>
+                        <a href="contact.html" class="btn btn-accent">
+                            <i class="bi bi-envelope"></i> Contact Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h3 class="navbar-brand mb-3">PARKSYNC</h3>
+                    <p class="text-secondary">Smart urban parking solutions for the modern city.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="search.html" class="footer-link">Search Parking</a>
+                    <a href="index.html#how" class="footer-link">How It Works</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-title">Support</h5>
+                    <a href="faq.html" class="footer-link">Help Center</a>
+                    <a href="faq.html" class="footer-link">FAQ</a>
+                    <a href="terms.html" class="footer-link">Terms</a>
+                    <a href="privacy.html" class="footer-link">Privacy</a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">Contact</h5>
+                    <div class="footer-contact">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>123 Parking Street, City Center</span>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="bi bi-envelope"></i>
+                        <span>support@parksync.com</span>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="bi bi-telephone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ParkSync. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

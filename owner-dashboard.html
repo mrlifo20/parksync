@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard - PARKSYNC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="index.html">PARKSYNC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                    <a href="profile.html" class="profile-icon" id="profileIcon">U</a>
+                    <button class="btn btn-accent" id="loginBtn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-2 col-md-3 dashboard-sidebar">
+                <h5 class="text-accent mb-3">Owner Panel</h5>
+                <nav>
+                    <a href="owner-dashboard.html" class="sidebar-link active">
+                        <i class="bi bi-speedometer2"></i> Overview
+                    </a>
+                    <a href="add-space.html" class="sidebar-link">
+                        <i class="bi bi-plus-circle"></i> Add Space
+                    </a>
+                    <a href="manage-spaces.html" class="sidebar-link">
+                        <i class="bi bi-building"></i> Manage Spaces
+                    </a>
+                    <a href="reports.html" class="sidebar-link">
+                        <i class="bi bi-graph-up"></i> Reports
+                    </a>
+                    <hr class="my-3" style="border-color: rgba(255,255,255,0.1)">
+                    <a href="dashboard.html" class="sidebar-link">
+                        <i class="bi bi-arrow-left"></i> User Dashboard
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-10 col-md-9 py-4 px-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Owner Dashboard</h2>
+                    <a href="add-space.html" class="btn btn-accent">
+                        <i class="bi bi-plus-circle"></i> Add New Space
+                    </a>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="stat-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="stat-label mb-1">Total Spaces</p>
+                                    <p class="stat-value mb-0" id="totalSpaces">0</p>
+                                </div>
+                                <div class="stat-icon bg-primary bg-opacity-25 text-primary">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="stat-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="stat-label mb-1">Occupied</p>
+                                    <p class="stat-value mb-0" id="occupiedSpaces">0</p>
+                                </div>
+                                <div class="stat-icon bg-success bg-opacity-25 text-success">
+                                    <i class="bi bi-car-front"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="stat-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="stat-label mb-1">Revenue</p>
+                                    <p class="stat-value mb-0" id="ownerRevenue">$0</p>
+                                </div>
+                                <div class="stat-icon bg-warning bg-opacity-25 text-warning">
+                                    <i class="bi bi-currency-dollar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-3">
+                        <div class="stat-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="stat-label mb-1">Rating</p>
+                                    <p class="stat-value mb-0">4.5 <i class="bi bi-star-fill text-warning"></i></p>
+                                </div>
+                                <div class="stat-icon bg-info bg-opacity-25 text-info">
+                                    <i class="bi bi-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Spaces -->
+                <div class="card card-custom">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">My Parking Spaces</h5>
+                            <a href="manage-spaces.html" class="btn btn-sm btn-outline-accent">Manage All</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-custom">
+                                <thead>
+                                    <tr>
+                                        <th>Space</th>
+                                        <th>Location</th>
+                                        <th>Price</th>
+                                        <th>Occupancy</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ownerSpacesList">
+                                    <!-- Populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom pt-0 mt-0 border-0">
+                <p>&copy; 2026 ParkSync. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
